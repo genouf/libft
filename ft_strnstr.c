@@ -15,15 +15,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		j = 0;
 		while (haystack[i + j] == needle[j])
 			j++;
-		if (j == size)
+		if (j - 1 == size)
 			return ((char *)&haystack[i]);
 		i++;
 	}
 	return (NULL);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	printf("%s  ", ft_strnstr("", "f", 2));
-	printf("%s", strnstr("", "f", 2));
-}*/
+	printf("%s  ", ft_strnstr("olf", "f", 3));
+	printf("%s", strnstr("olf", "f", 3));
+}

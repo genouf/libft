@@ -25,5 +25,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif
