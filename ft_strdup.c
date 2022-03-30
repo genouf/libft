@@ -13,10 +13,10 @@ char	*ft_strdup(const char *s1)
 	return (copy);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	str[] = "Alexandre";
 
 	printf("%s \n", strdup(str));
 	printf("%s", ft_strdup(str));
-}
+}*/
