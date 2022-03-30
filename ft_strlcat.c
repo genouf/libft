@@ -8,14 +8,25 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	while (dst[i])
 		i++;
-	if (i >= dstsize)
-		return ((size_t)ft_strlen(src) + dstsize);
+	if (i > dstsize)
+		return (ft_strlen(src) + dstsize);
 	j = 0;
 	while (src[j] && (i + j + 1 < dstsize))
 	{
-		dest[i + j] = src[j];
+		dst[i + j] = src[j];
 		j++;
 	}
-	dest[i + j] = '\0';
-	return ((size_t)ft_strlen(src) + i);
+	dst[i + j] = '\0';
+	return (ft_strlen(src) + i);
 }
+
+/*int	main(void)
+{
+	char	str[11] = "lolmdrllll";
+	char	str1[11] = "lolmdrllll";
+
+	printf("%lu // ", strlcat(str, "Bonjour", 10));
+	printf("%s", str);
+	printf("\n%lu // ", ft_strlcat(str1, "Bonjour", 10));
+	printf("%s", str1);
+}*/

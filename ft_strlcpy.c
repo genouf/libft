@@ -16,11 +16,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 /*int	main(void)
 {
-	char	str[3];
-	char	str1[3];
+	char	str[8];
+	char	str1[8];
 
-	printf("%lu  ", strlcpy(str, "Gabriel", 3));
+	printf("%lu  ", strlcpy(str, "Bonjour", 5));
 	printf("%s", str);
-	printf("%lu", ft_strlcpy(str1, "Gabriel", 3));
+	printf("%lu", ft_strlcpy(str1, "Bonjour", 5));
 	printf("%s", str1);
 }*/
