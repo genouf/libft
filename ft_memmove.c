@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:59:23 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 16:13:53 by genouf           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:36:38 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*c;
 	unsigned char	*p;
 	unsigned char	*tmp;
-	int				i;
+	size_t			i;
 
 	c = (unsigned char *)src;
 	p = (unsigned char *)dst;

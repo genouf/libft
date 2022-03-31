@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 15:58:05 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 16:22:02 by genouf           ###   ########.fr       */
+/*   Created: 2022/03/31 16:35:55 by genouf            #+#    #+#             */
+/*   Updated: 2022/03/31 16:35:58 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	void	*result;
-	int		i;
+	size_t	i;
+	char	*s1c;
+	char	*s2c;
 
-	result = malloc(count);
+	s1c = (char *)s1;
+	s2c = (char *)s2;
 	i = 0;
-	while (i < count)
-	{
-		result[i] = malloc(size);
+	while (s1c[i] == s2c[i] && s1c[i] && s2c[i] && i < n - 1)
 		i++;
-	}
-	if (result == NULL)
-		return (NULL);
-	ft_bzero(result, count * size);
-	return (result);
+	if (s1c[i] > s2c[i])
+		return (1);
+	else if (s1c[i] < s2c[i])
+		return (-1);
+	else
+		return (0);
 }
-
-/*int	main(void)
-{
-	return (0);
-}*/
