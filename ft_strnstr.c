@@ -2,8 +2,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 	size_t	size;
 
 	size = ft_strlen(needle);
@@ -22,8 +22,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%s  ", ft_strnstr("olf", "f", 3));
 	printf("%s", strnstr("olf", "f", 3));
-}
+}*/
