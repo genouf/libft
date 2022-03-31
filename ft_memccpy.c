@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 15:59:17 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 15:59:19 by genouf           ###   ########.fr       */
+/*   Created: 2022/03/31 15:57:29 by genouf            #+#    #+#             */
+/*   Updated: 2022/03/31 15:57:34 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char	*c;
+	unsigned char	*copy;
 	unsigned char	*p;
 
-	c = (unsigned char *)src;
+	copy = (unsigned char *)src;
 	p = (unsigned char *)dst;
 	while (n > 0)
 	{
-		*p = *c;
+		*p = *copy;
 		p++;
-		c++;
+		if (*copy == c)
+			return (p);
+		copy++;
 		n--;
 	}
-	return (dst);
+	return (NULL);
 }
 
 /*int main()
 {
-    char str[8] = "bonjour";
+    char src[8] = "bonjour";
+    char dst[35] = "salut a tous lerptizamismdr";
+    char *result;
     
-    ft_memcpy(str + 1, str, 6);
-    printf("the result of ft_memcpy is %s\n", str);
+    printf("the src string is : %s\n", src);
+    printf("the dst string is : %s\n", dst);
+    result = ft_memccpy(dst, src, 'j', 7);
+    printf("the new dst string is : %s\n", dst);    
+    printf("the result of ft_memccpy is : %s\n", result);
     return (0);
 }*/

@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 15:59:28 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 15:59:30 by genouf           ###   ########.fr       */
+/*   Created: 2022/03/31 15:59:23 by genouf            #+#    #+#             */
+/*   Updated: 2022/03/31 15:59:25 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*p;
+	char	*c;
+	char	*p;
+	char	*tmp;
+	int		i;
 
-	p = b;
+	c = (char *)src;
+	p = (char *)dst;
+	tmp = (char *)malloc(len);
+	if (tmp == NULL)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		tmp[i] = c[i];
 	while (len > 0)
 	{
-		*p = c;
+		*p = *tmp;
 		p++;
+		tmp++;
 		len--;
 	}
-	return (b);
+	return (dst);
 }
 
-/*int	main(void)
+/*int main()
 {
-	char	str[10] = "Gabriel";
-
-	ft_memset(str, 71, 3);
-	printf("%s", str);
+    char str[8] = "bonjour";
+    
+    ft_memmove(str + 1, str, 6);
+    printf("the result of ft_memcpy is %s\n", str);
+    return (0);
 }*/
