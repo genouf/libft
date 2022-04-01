@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:12:19 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/01 10:16:38 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/01 15:23:49 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	printf("%d\n", i);
 	result[x + 1] = 0;
 	return (result);
 }
