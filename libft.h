@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:01:39 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/01 10:52:32 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/01 14:59:54 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 /* INCLUDE */
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 /* PROTOTYPES */
 size_t	ft_strlen(const char *s);
@@ -50,5 +51,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 
 #endif

@@ -6,11 +6,21 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:52:56 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/01 10:52:58 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/01 13:26:11 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*equal_zero(void)
+{
+	char	*result;
+
+	result = (char *)malloc(sizeof(char) * 2);
+	result[0] = '0';
+	result[1] = '\0';
+	return (result);
+}
 
 char	*reverse_str(char *str)
 {
@@ -38,6 +48,10 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	result = (char *)malloc(sizeof(char) * 12);
+	if (result == NULL)
+		return (NULL);
+	if (n == 0)
+		return (equal_zero());
 	tmp = n;
 	if (tmp < 0)
 		tmp = -tmp;
@@ -55,6 +69,6 @@ char	*ft_itoa(int n)
 
 /*int	main(void)
 {
-	printf("%s", ft_itoa(2383440));
+	printf("%s", ft_itoa(0));
 	return (0);
 }*/
