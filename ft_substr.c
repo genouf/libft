@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 21:47:26 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 22:19:28 by genouf           ###   ########.fr       */
+/*   Updated: 2022/03/31 22:23:36 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (result);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	str[]= "";
 	char	*result;
 
 	result = ft_substr(str, 1, 6);
 	printf("%s", result);
-}
+}*/
