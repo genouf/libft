@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 08:56:03 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/01 13:51:52 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:07:27 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	str[] = "AelexandreAe";
+	char	str[] = "AefAe";
 	char	*result;
 
 	result = ft_strtrim(str, "Ae");
 	printf("%s", result);
-}*/
+}
