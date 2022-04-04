@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:59:23 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 16:36:38 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/04 23:45:05 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = -1;
 	while (++i < len)
 		tmp[i] = c[i];
+	i = 0;
 	while (len > 0)
 	{
-		*p = *tmp;
+		*p = tmp[i];
 		p++;
-		tmp++;
+		i++;
 		len--;
 	}
+	free(tmp);
 	return (dst);
 }
 

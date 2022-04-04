@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:00:11 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/04 19:39:24 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/05 01:47:20 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*int	main(void)
 {
 	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
 	
-	printf("%s  \n", ft_strnstr(haystack, "cd", 8));
-	printf("%s  \n", strnstr(haystack, "cd", 8));
+	printf("%s  \n", ft_strnstr(haystack, needle, -1));
+	printf("%s  \n", ft_strnstr(haystack, "c", -1));
 }*/
