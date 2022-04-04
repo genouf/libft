@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:12:19 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/01 15:23:49 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/04 23:29:08 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	count_size(char const *s, char c, int i)
 	int	count;
 
 	count = 0;
-	while (s[i] != c)
+	while (s[i] != c && s[i])
 	{
 		count++;
 		i++;
@@ -68,15 +68,15 @@ char	**ft_split(char const *s, char c)
 
 /*int	main(void)
 {
-	char	str[] = "f J'aime le pain f";
+	char	str[] = ("--1-2--3---4----5-----42");
 	char	**result;
 	int		i;
 
-	result = ft_split(str, ' ');
+	result = ft_split(str, '-');
 	i = 0;
 	while (i < 7)
 	{
-		printf("%s\n", result[i]);
+		//printf("%s\n", result[i]);
 		i++;
 	}
 	//printf("%d", count_word(str, ' '));
