@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:59:43 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 15:59:45 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/04 20:10:34 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 /*int	main(void)
 {
-	char	str[11] = "lolmdrllll";
-	char	str1[11] = "lolmdrllll";
+	char * src = (char *)"AAAAAAAAA";
+    char dst[30] = {0}; 
+    memset (dst, 'B', 4);
 
-	printf("%lu // ", strlcat(str, "Bonjour", 10));
-	printf("%s", str);
-	printf("\n%lu // ", ft_strlcat(str1, "Bonjour", 10));
-	printf("%s", str1);
+    
+    size_t result = ft_strlcat(dst, src, 6);
+    printf("ft_strlcat returns %zu\n", result);
+    printf("the resulting string of ft_strlcat is %s\n", dst);
+	memset(dst, 0, 30);
+    memset (dst, 'B', 4);
+    result = strlcat(dst, src, 6);
+    printf("strlcat returns %zu\n", result);
+    printf("the resulting string of strlcat is %s\n", dst);
+
+    return (0);
 }*/

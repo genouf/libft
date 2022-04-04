@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:00:15 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 16:00:17 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/04 18:54:58 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(s);
 	while (i > -1)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 		{
 			s += i;
 			return ((char *)s);
