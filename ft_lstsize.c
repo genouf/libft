@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 17:02:54 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/05 17:02:56 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/05 17:32:26 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	int		count;
 	t_list	*tmp;
 
+	if (!lst)
+		return (0);
 	count = 0;
 	tmp = lst;
 	while (tmp)

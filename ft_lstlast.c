@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 17:02:42 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/05 17:02:43 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/05 21:00:22 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /*int	main(void)

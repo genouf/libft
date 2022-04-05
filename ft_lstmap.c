@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 17:02:47 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/05 21:13:15 by genouf           ###   ########.fr       */
+/*   Created: 2022/04/05 17:50:47 by genouf            #+#    #+#             */
+/*   Updated: 2022/04/05 22:26:49 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void	*content)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
+	t_list	*tmp;
+	t_list	*begin_list;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
-		return (NULL);
-	new->content = content;
-	new->next = 0;
-	return (new);
+	if (!lst || !f || !del)
+		return (0);
+	begin_list = 0;
+	while (lst)
+	{
+		tmp = ft_lstnew((*f)(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&begin_list, del);
+			return(0);
+		}
+		ft_lstadd_back(&begin_list, tmp);
+		tmp = tmp->next;
+		lst = lst->next;
+	}
+	return(begin_list);
 }
 
-/*int	main(void)
-{
-	t_list	*new_list;
-
-	new_list = ft_lstnew("Gab");
-	printf("%s", (char *)new_list->content);
-}*/

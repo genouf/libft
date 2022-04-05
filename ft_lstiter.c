@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 17:02:47 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/05 21:13:15 by genouf           ###   ########.fr       */
+/*   Created: 2022/04/05 17:45:05 by genouf            #+#    #+#             */
+/*   Updated: 2022/04/05 17:48:44 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void	*content)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*new;
+	t_list	*tmp;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
-		return (NULL);
-	new->content = content;
-	new->next = 0;
-	return (new);
+	if (!lst || !f)
+		return ;
+	tmp = lst;
+	while(tmp)
+	{
+		(*f)(tmp->content);
+		tmp = tmp->next;
+	}
 }
 
-/*int	main(void)
-{
-	t_list	*new_list;
-
-	new_list = ft_lstnew("Gab");
-	printf("%s", (char *)new_list->content);
-}*/
