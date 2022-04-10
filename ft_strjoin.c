@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 21:25:49 by genouf            #+#    #+#             */
-/*   Updated: 2022/03/31 22:22:30 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/10 09:28:42 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,27 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	size;
 	char	*result;
+	int		i;
+	int		j;
 
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	result = (char *)malloc(sizeof(char) * size);
 	if (result == NULL)
 		return (NULL);
-	ft_strlcpy(result, s1, size);
-	ft_strlcat(result, s2, size);
+	i = 0;
+	while (s1 && s1[i])
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2 && s2[j])
+	{
+		result[i] = s2[j];
+		j++;
+		i++;
+	}
+	result[i] = '\0';
 	return (result);
 }
 

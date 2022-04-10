@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 17:50:47 by genouf            #+#    #+#             */
-/*   Updated: 2022/04/05 22:26:49 by genouf           ###   ########.fr       */
+/*   Updated: 2022/04/10 09:30:09 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!tmp)
 		{
 			ft_lstclear(&begin_list, del);
-			return(0);
+			return (0);
 		}
 		ft_lstadd_back(&begin_list, tmp);
 		tmp = tmp->next;
 		lst = lst->next;
 	}
-	return(begin_list);
+	return (begin_list);
 }
-
