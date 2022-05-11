@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:12:19 by genouf            #+#    #+#             */
-/*   Updated: 2022/05/11 12:29:34 by genouf           ###   ########.fr       */
+/*   Updated: 2022/05/11 12:45:56 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char	*split_process(char const *s, char c, int *i)
 {
 	int		j;
 	int		count;
-	char 	*result;
-	
+	char	*result;
+
 	count = 0;
 	j = *i;
 	while (s[j] != c && s[j])
@@ -52,7 +52,7 @@ char	*split_process(char const *s, char c, int *i)
 	(*i)--;
 	j = -1;
 	while (s[++(*i)] != c && s[*i])
-		result[++j]= s[*i];
+		result[++j] = s[*i];
 	result[j + 1] = '\0';
 	return (result);
 }
@@ -72,9 +72,9 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-				result[++x] = split_process(s, c, &i);
-				if (result[x] == NULL)
-					return (free_all(result, x));
+			result[++x] = split_process(s, c, &i);
+			if (result[x] == NULL)
+				return (free_all(result, x));
 		}
 		else
 			i++;
